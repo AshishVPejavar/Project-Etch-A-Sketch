@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{}
+        #tile {
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -18,18 +23,51 @@
     <div id="body">
         <div id="content">
            <div id="buttons">
-                <div id="reset"></div>
-                <div id="gridlayoutvalue"></div>
+                <div id="reset"><button>Reset</button></div>
+                <div id="gridlayouttitle"><p>Grid tiles number:</p></div>
+                <div id="gridlayoutvalue">
+                    <div id="gridlayoutvalue-number">
+                        <input type="number" min="1" max="100" value="50" step="1">
+                    </div>
+                    <div id="gridlayoutvalue-enter">
+                        <button>Enter</button>
+                    </div>
+                </div>
+                
            </div>
-           <div id="grid"></div>
+           <div id="grid">
+            <div id="tile"  onmouseover="test();"></div>
+           </div>
         </div>
     </div>
     <div id="footer">
         <div id="footertext"></div>
     </div>
 
+
+
     <script>
 
+        //Body click and unlick system : 
+
+        let isClicked = false;
+        let bodyClickOn = document.querySelector('body');
+
+        bodyClickOn.addEventListener('mousedown',()=>{console.log("body clicked."); isClicked = true;})
+        bodyClickOn.addEventListener('mouseup',()=>{console.log("body clicked off."); isClicked = false;})
+
+
+
+
+        //Tile click functionality :
+        function test(){
+           if(isClicked){
+            document.getElementById('tile').style.backgroundColor = 'green';
+           }
+        }
+
+
+       
     </script>
 </body>
 </html>
