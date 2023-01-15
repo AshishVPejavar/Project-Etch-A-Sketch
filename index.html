@@ -6,6 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        }
+
+        #header {
+        flex: 1 1 auto; 
+        height: 90px;
+        padding: 20px;
+        border: 2px solid black;
+        align-items: center;
+        }
+
+        #Real-body {
+        flex: 1 1 auto; 
+        }
+
+        #footer {
+        flex: 1 1 0;
+        border: 2px solid black;
+        }
+
+        
+
+        #content{
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #buttons{
+            flex: 1 1 auto;
+        }
+        #grid{
+            flex: 1 1 auto;
+        }
+
+
+
+
+        .textbox{
+            height: 50px;
+            width: 250px;
+            border: 1px solid black;
+        }
+
         #tile {
             height: 50px;
             width: 50px;
@@ -20,26 +67,45 @@
             <h1>Etch-A-Sketch</h1>
         </div>
     </div>
-    <div id="body">
+
+    <div id="Real-body">
+
         <div id="content">
+
            <div id="buttons">
-                <div id="reset"><button>Reset</button></div>
-                <div id="gridlayouttitle"><p>Grid tiles number:</p></div>
-                <div id="gridlayoutvalue">
+
+                <div id="reset" class="textbox"><button>Reset</button></div>
+
+                <div id="gridlayouttitle" class="textbox"><p>Grid tiles number:</p></div>
+
+                <div id="gridlayoutvalue" class="textbox">
+
                     <div id="gridlayoutvalue-number">
-                        <input type="number" min="1" max="100" value="50" step="1">
+
+                        <input type="number" min="10" max="100" value="50" step="1">
+
                     </div>
+
                     <div id="gridlayoutvalue-enter">
+
                         <button>Enter</button>
+
                     </div>
+                     
                 </div>
                 
            </div>
+
            <div id="grid">
-            <div id="tile"  onmouseover="test();"></div>
+
+                <div id="tile"  onmouseover="test();"></div>
+
            </div>
+
         </div>
+
     </div>
+
     <div id="footer">
         <div id="footertext"></div>
     </div>
